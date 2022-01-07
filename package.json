@@ -1,0 +1,13 @@
+{
+  "name": "QLUsers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Savian",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.2.0",
+    "lodash": "^4.17.21"
+  }
+}

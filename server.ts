@@ -1,7 +1,6 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql').graphqlHTTP;
 
-// const schema = require('./schema/schema');
 import schema = require('./schema/schema');
 
 const app = express();

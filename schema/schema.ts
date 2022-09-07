@@ -4,6 +4,7 @@ import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
+    GraphQLNonNull,
     GraphQLSchema
 } from 'graphql';
 import axios from 'axios';
@@ -41,17 +42,20 @@ const mutation = new GraphQLObjectType(({
         addUser: {
             type: UserType,
             args: {
-                firstName: { type: GraphQLString },
-                age: { type: GraphQLInt },
+                firstName: { type: new GraphQLNonNull(GraphQLString) },
+                age: { type: new GraphQLNonNull(GraphQLInt) },
                 companyId: { type: GraphQLString }
             },
-            resolve(){
-
+            resolve(parentValue: any, args: any){
+                const { firstName }: { firstName: string } = args;
+                return axios.post('http://localhost:3000/users', { firstName })
+                    .then(response => response.data);
             }
         }
     }
 }));
 
 export const schema = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,
+    mutation: mutation
 });

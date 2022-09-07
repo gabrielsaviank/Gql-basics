@@ -1,13 +1,17 @@
 {
   "users": [
-    { "id": "23", "firstName":  "Gabriel", "age": 27, "companyId": "1" },
-    { "id": "21", "firstName":  "Tom", "age": 20, "companyId": "3" },
-    { "id": "47", "firstName":  "Mitch", "age": 40, "companyId": "10" },
-    { "id": "42", "firstName":  "Edward", "age": 33, "companyId": "10" }
+    { "id": "23", "firstName": "Gabriel", "surName": "Savian", "age": 27, "companyId": "1" },
+    { "id": "21", "firstName": "Tom", "surName": "Rhoads", "age": 20, "companyId": "3" },
+    { "id": "47", "firstName": "Mitch", "surName": "Jones", "age": 40, "companyId": "10" },
+    { "id": "42", "firstName": "Edward","surName": "McCartney", "age": 33, "companyId": "10" },
+    { "id": "5", "firstName": "Giovanni", "surName": "Pagannini", "age": 29, "companyId": "10" },
+    { "id": "11", "firstName": "Alistair", "surName": "Crowley", "age": 50, "companyId": "5" },
+    { "id": "27", "firstName": "Hans", "surName": "Bauermann", "age": 22, "companyId": "1" }
   ],
   "companies": [
-    { "id": "1", "name": "AlleSys", "description": "MitYou" },
-    { "id": "3", "name": "Apple", "description": "iphone" },
-    { "id": "10", "name": "Amazon", "description": "Aws" }
+    { "id": "1", "name": "AlleSys", "service": "Software" },
+    { "id": "3", "name": "Apple", "service": "Sales" },
+    { "id": "10", "name": "Amazon", "service": "Sales" },
+    { "id": "5", "name": "Crowley and Sons", "service": "Accountancy" }
   ]
 }

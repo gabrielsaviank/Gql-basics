@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server",
-    "dev": "nodemon server.ts",
-    "tsc": "tsc"
+    "json:server": "json-server --watch db.json",
+    "dev": "nodemon server.ts"
   },
   "author": "Gabriel Savian",
   "license": "MIT",

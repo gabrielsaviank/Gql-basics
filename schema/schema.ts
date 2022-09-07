@@ -1,5 +1,6 @@
 const graphql = require('graphql');
 const axios = require('axios');
+
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -66,6 +67,6 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
-export default new GraphQLSchema({
+export const schema = new GraphQLSchema({
     query: RootQuery
 });

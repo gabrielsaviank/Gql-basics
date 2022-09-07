@@ -5,8 +5,8 @@
     { "id": "47", "firstName": "Mitch", "surName": "Jones", "age": 40, "companyId": "10" },
     { "id": "42", "firstName": "Edward","surName": "McCartney", "age": 33, "companyId": "10" },
     { "id": "5", "firstName": "Giovanni", "surName": "Pagannini", "age": 29, "companyId": "10" },
-    { "id": "11", "firstName": "Alistair", "surName": "Crowley", "age": 50, "companyId": "1" },
-    { "id": "27", "firstName": "Hans", "surName": "Bauermann", "age": 22, "companyId": "5" }
+    { "id": "11", "firstName": "Alistair", "surName": "Crowley", "age": 50, "companyId": "5" },
+    { "id": "27", "firstName": "Hans", "surName": "Bauermann", "age": 22, "companyId": "1" }
   ],
   "companies": [
     { "id": "1", "name": "AlleSys", "service": "Software" },

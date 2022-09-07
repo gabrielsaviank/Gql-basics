@@ -1,48 +1,15 @@
-const graphql = require('graphql');
-const axios = require('axios');
-
-const {
+// const graphql = require('graphql');
+// const axios = require('axios');
+import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
-    GraphQLSchema,
-    GraphQLList
-} = graphql
+    GraphQLSchema
+} from 'graphql';
+import axios from 'axios';
 
-const CompanyType = new GraphQLObjectType({
-    name: 'Company',
-    fields: () => ({
-        id: { type: GraphQLString },
-        name: { type: GraphQLString },
-        service: { type: GraphQLString },
-        users: {
-            type: new GraphQLList(UserType),
-            resolve( parentValue: { id : string }, args: { id: string } ) {
-                return axios.get(`http://localhost:3000/companies/${parentValue.id}/users`).then(
-                    (response: any) => response.data
-                )
-            }
-        }
-    })
-});
-
-const UserType = new GraphQLObjectType({
-    name: 'User',
-    fields: () => ({
-        id: { type: GraphQLString},
-        firstName: { type: GraphQLString },
-        surName: { type: GraphQLString },
-        age: { type: GraphQLInt },
-        company: {
-            type: CompanyType,
-            resolve( parentValue: { companyId: string }, args: { id: string } ) {
-                return axios.get(`http://localhost:3000/companies/${parentValue.companyId}`).then(
-                    (response: any) => response.data
-                );
-            }
-        }
-    })
-});
+import { CompanyType } from "../types/CompanyType";
+import { UserType } from "../types/UserType";
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -67,6 +34,23 @@ const RootQuery = new GraphQLObjectType({
         },
     }
 });
+
+const mutation = new GraphQLObjectType(({
+    name: 'Mutation',
+    fields: {
+        addUser: {
+            type: UserType,
+            args: {
+                firstName: { type: GraphQLString },
+                age: { type: GraphQLInt },
+                companyId: { type: GraphQLString }
+            },
+            resolve(){
+
+            }
+        }
+    }
+}));
 
 export const schema = new GraphQLSchema({
     query: RootQuery
